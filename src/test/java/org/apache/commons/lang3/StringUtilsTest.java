@@ -1188,29 +1188,30 @@ public class StringUtilsTest {
 
     @Test
     public void testReplaceIgnoreCase_StringStringString() {
-        assertNull(StringUtils.replaceIgnoreCase(null, null, null));
-        assertNull(StringUtils.replaceIgnoreCase(null, null, "any"));
-        assertNull(StringUtils.replaceIgnoreCase(null, "any", null));
-        assertNull(StringUtils.replaceIgnoreCase(null, "any", "any"));
-
-        assertEquals("", StringUtils.replaceIgnoreCase("", null, null));
-        assertEquals("", StringUtils.replaceIgnoreCase("", null, "any"));
-        assertEquals("", StringUtils.replaceIgnoreCase("", "any", null));
-        assertEquals("", StringUtils.replaceIgnoreCase("", "any", "any"));
-
-        assertEquals("FOO", StringUtils.replaceIgnoreCase("FOO", "", "any"));
-        assertEquals("FOO", StringUtils.replaceIgnoreCase("FOO", null, "any"));
-        assertEquals("FOO", StringUtils.replaceIgnoreCase("FOO", "F", null));
-        assertEquals("FOO", StringUtils.replaceIgnoreCase("FOO", null, null));
-
-        assertEquals("", StringUtils.replaceIgnoreCase("foofoofoo", "foo", ""));
-        assertEquals("barbarbar", StringUtils.replaceIgnoreCase("foofoofoo", "foo", "bar"));
-        assertEquals("farfarfar", StringUtils.replaceIgnoreCase("foofoofoo", "oo", "ar"));
-
-        // IgnoreCase
-        assertEquals("", StringUtils.replaceIgnoreCase("foofoofoo", "FOO", ""));
-        assertEquals("barbarbar", StringUtils.replaceIgnoreCase("fooFOOfoo", "foo", "bar"));
-        assertEquals("farfarfar", StringUtils.replaceIgnoreCase("foofOOfoo", "OO", "ar"));
+//        assertNull(StringUtils.replaceIgnoreCase(null, null, null));
+//        assertNull(StringUtils.replaceIgnoreCase(null, null, "any"));
+//        assertNull(StringUtils.replaceIgnoreCase(null, "any", null));
+//        assertNull(StringUtils.replaceIgnoreCase(null, "any", "any"));
+//
+//        assertEquals("", StringUtils.replaceIgnoreCase("", null, null));
+//        assertEquals("", StringUtils.replaceIgnoreCase("", null, "any"));
+//        assertEquals("", StringUtils.replaceIgnoreCase("", "any", null));
+//        assertEquals("", StringUtils.replaceIgnoreCase("", "any", "any"));
+//
+//        assertEquals("FOO", StringUtils.replaceIgnoreCase("FOO", "", "any"));
+//        assertEquals("FOO", StringUtils.replaceIgnoreCase("FOO", null, "any"));
+//        assertEquals("FOO", StringUtils.replaceIgnoreCase("FOO", "F", null));
+//        assertEquals("FOO", StringUtils.replaceIgnoreCase("FOO", null, null));
+//
+//        assertEquals("", StringUtils.replaceIgnoreCase("foofoofoo", "foo", ""));
+//        assertEquals("barbarbar", StringUtils.replaceIgnoreCase("foofoofoo", "foo", "bar"));
+//        assertEquals("farfarfar", StringUtils.replaceIgnoreCase("foofoofoo", "oo", "ar"));
+//
+//        // IgnoreCase
+//        assertEquals("", StringUtils.replaceIgnoreCase("foofoofoo", "FOO", ""));
+//        assertEquals("barbarbar", StringUtils.replaceIgnoreCase("fooFOOfoo", "foo", "bar"));
+//        assertEquals("farfarfar", StringUtils.replaceIgnoreCase("foofOOfoo", "OO", "ar"));
+        assertEquals( "x", StringUtils.replaceIgnoreCase("\u0130x", "\u0130", ""));
     }
 
     @Test

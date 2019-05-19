@@ -5603,11 +5603,35 @@ public class StringUtils {
          if (isEmpty(text) || isEmpty(searchString) || replacement == null || max == 0) {
              return text;
          }
+
+
          String searchText = text;
+         String origSearchString = searchString;
+         System.out.println(searchText);
+
          if (ignoreCase) {
+
              searchText = text.toLowerCase();
-             searchString = searchString.toLowerCase();
+             searchString = origSearchString.toLowerCase();
+
+             if (searchText.length() != text.length()) {
+
+                 searchText = text.toUpperCase();
+                 searchString = origSearchString.toUpperCase();
+
+                 if (searchText.length() != text.length()) {
+                     throw new RuntimeException("Unicode case change caused addition or subtraction of one or more characters.");
+                 }
+
+             }
+
+
          }
+
+         System.out.println(searchText);
+
+
+
          int start = 0;
          int end = searchText.indexOf(searchString, start);
          if (end == INDEX_NOT_FOUND) {
@@ -5627,6 +5651,7 @@ public class StringUtils {
              end = searchText.indexOf(searchString, start);
          }
          buf.append(text, start, text.length());
+
          return buf.toString();
      }
 
