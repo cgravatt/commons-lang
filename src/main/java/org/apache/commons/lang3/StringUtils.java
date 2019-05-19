@@ -5607,7 +5607,6 @@ public class StringUtils {
 
          String searchText = text;
          String origSearchString = searchString;
-         System.out.println(searchText);
 
          if (ignoreCase) {
 
@@ -5627,8 +5626,6 @@ public class StringUtils {
 
 
          }
-
-         System.out.println(searchText);
 
 
 
